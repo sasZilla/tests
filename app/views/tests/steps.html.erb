@@ -1,0 +1,26 @@
+<h2>test</h2>
+
+<% if @step < 10 %>
+<form action="steps">
+	<button type="submit" name="a" value="a"><img width="80px" src="http://gestioncultura.cervantes.es/COMUNES/17328_I_Gaudi-conf%20gavela.jpg" alt=""></button>
+</form>
+<form action="steps">
+	<button type="submit"><img width="80px" src="http://dic.academic.ru/pictures/wiki/files/65/Antoni_Gaudi_1878.jpg" alt=""></button>
+</form>
+
+<p><%= @step + 1 %></p>
+<p><%= @answ %></p>
+
+<% else %>
+	<a href="finish" id="finish" style="display:none">finish</a>
+	<img id="loading" src="http://jqueryui.com/resources/demos/progressbar/images/pbar-ani.gif" alt="">
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			setTimeout(function() {
+				$('#loading').hide();
+				$('#finish').show();
+			}, 1000);
+		});
+	</script>
+<% end %>
